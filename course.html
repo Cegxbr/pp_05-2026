@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Академия Знаний — современное онлайн-образование</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'lato': ['Lato', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'card': '1rem',
+                        'btn': '1rem',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .transition-custom {
+            transition: all 0.25s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+        }
+        .slider-bg {
+            transition: background-image 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .plus-icon {
+            transition: transform 0.3s ease;
+        }
+        .rotate-90 {
+            transform: rotate(90deg);
+        }
+        @media (max-width: 768px) {
+            .faq-text {
+                font-size: 1.5rem !important;
+                line-height: 1.3 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-lato text-[#1a1f2e] antialiased overflow-x-hidden">
+
+    <main class="relative w-full">
+
+        <header class="relative w-full bg-white overflow-hidden">
+
+            <div class="bg-[#f7faff]/95 backdrop-blur-sm top-0 left-0 w-full z-50 shadow-sm">
+                <div class="container mx-auto px-5 md:px-8 lg:px-12 py-4 flex flex-wrap items-center justify-between gap-4">
+
+                    <div class="flex items-center gap-3 shrink-0">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-[url('images/logo1.png')] bg-cover bg-center rounded-full"></div>
+                        <a href="Index.html" class="text-lg md:text-xl font-medium text-[#3b82f6] font-lato">Академия Знаний</a>
+                    </div>
+
+                    <div class="hidden md:flex items-center gap-6 lg:gap-10">
+                        <div class="flex gap-6 lg:gap-10 text-base lg:text-lg font-medium">
+                            <a href="catalog.html" class="hover:text-[#3b82f6] transition-custom cursor-pointer">Курсы</a>
+                            <a href="#" class="hover:text-[#3b82f6] transition-custom cursor-pointer">База знаний</a>
+                            <a href="#" class="hover:text-[#3b82f6] transition-custom cursor-pointer">Подбор курса</a>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="cursor-pointer px-4 py-2 rounded-btn bg-[#f7faff] text-[#3b82f6] font-medium hover:bg-[#f0f4ff] transition-custom">Войти</div>
+                            <div class="cursor-pointer px-5 py-2 rounded-btn bg-[#3b82f6] text-white font-medium hover:bg-blue-400 hover:text-black hover:scale-105 transition-custom shadow-md">Начать обучение</div>
+                        </div>
+                    </div>
+
+                    <div class="md:hidden flex items-center gap-3">
+                        <div class="cursor-pointer px-3 py-1.5 rounded-btn bg-[#3b82f6] text-white text-sm" onclick="alert('Форма входа')">Войти</div>
+                        <button id="mobileMenuBtn" class="text-[#1a1f2e] focus:outline-none">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="mobileMenu" class="hidden md:hidden bg-[#f7faff] border-t border-[#f0f4ff] flex flex-col gap-4 px-5 py-6">
+                    <a href="catalog.html" class="text-lg font-medium hover:text-[#3b82f6]">Курсы</a>
+                    <a href="#" class="text-lg font-medium hover:text-[#3b82f6]">База знаний</a>
+                    <a href="#" class="text-lg font-medium hover:text-[#3b82f6]">Подбор курса</a>
+                    <div class="pt-2 flex flex-col gap-3">
+                        <div class="text-center py-2 rounded-btn bg-white text-[#3b82f6] font-medium">Войти</div>
+                        <div class="text-center py-2 rounded-btn bg-[#3b82f6] text-white font-medium">Начать обучение</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 md:pt-8 lg:pt-12 w-full">
+                <div class="container mx-auto px-5 md:px-8 lg:px-12 py-2 md:py-4 flex flex-col items-center gap-4 md:gap-6">
+                    <p class="text-md sm:text-md md:text-lg lg:text-xl font-lato text-[#3b82f6] tracking-tight text-center">IT и программирование</p>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair text-[#3b82f6] tracking-tight text-center">Data Science: от основ до машинного обучения</h1>
+                    <p class="text-md sm:text-lg md:text-xl lg:text-2xl font-lato text-[#1A1F2E80]/50 tracking-tight text-center">Комплексная программа обучения аналитике данных и машинному обучению. Вы изучите Python, библиотеки для анализа данных, статистику, алгоритмы машинного обучения и нейронные сети.</p>
+
+                    <div class="flex flex-row gap-6">
+
+                        <div class="flex items-center gap-2 text-[#3b82f6] text-md mb-2">
+                            <img class="w-8 h-8" src="images/star.svg" alt="">
+                            4.9 (1240 студентов)
+                        </div>
+
+                        <div class="flex items-center gap-2 text-[#3b82f6] text-md mb-2">
+                            <img class="w-8 h-8" src="images/clock.svg" alt="">
+                            320 часов
+                        </div>
+                        
+                        <div class="flex items-center gap-2 text-[#3b82f6] text-md mb-2">
+                            <img class="w-8 h-8" src="images/people.svg" alt="">
+                            Иванов А.С.
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container mx-auto px-5 md:px-8 lg:px-12 py-2 md:py-4">
+                    <a href="catalog.html" class="hover:text-[#3b82f6] transition-custom cursor-pointer">Назад</a>
+                </div>
+                
+            </div>
+        </header>
+
+
+        <section class="bg-[#f7faff] w-full py-8 md:py-16">
+            <div class="container mx-auto px-5 md:px-8 lg:px-12">
+                <div class="flex flex-col-reverse md:flex-row gap-8 lg:gap-10">
+
+                    <div class="basis-2/3 flex flex-col gap-4">
+                        <div class="px-4 py-2 md:px-6 md:py-4 shadow-lg rounded-card border">
+                            <h3 class="text-xl md:text-2xl font-medium font-playfair mb-3">Преподаватель</h3>
+
+                            <div class="flex gap-2">
+
+                                <img class="rounded-full w-24 h-24 lg:w-36 lg:h-36 object-fill" src="images/teacher.jpg" alt="">
+
+                                <div class="flex flex-col gap-2">
+                                    <h1 class="text-base sm:text-md md:text-lg lg:text-xl font-playfair tracking-tight">Иванов Александр Сергеевич</h1>
+                                    <p class="text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#3b82f6] tracking-tight mb-2">практикующий Data Scientist</p>
+                                    <p class="text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                        Более 10 лет опыта в анализе данных и машинном обучении. Работал в ведущих IT-компаниях.
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+
+                        <div class="flex flex-col px-4 py-2 md:px-6 md:py-4 shadow-lg rounded-card border gap-4">
+
+                            
+
+                            <div class="w-full flex flex-col gap-2">    
+                                <h3 class="text-xl md:text-2xl font-medium font-playfair mb-3">Программа курса</h3>
+
+                                <div class="flex flex-row px-4 py-2 md:px-6 md:py-4 shadow rounded-card border mb-4 md:mb-6">
+
+                                    <div class="flex flex-col w-12 h-12 rounded-full bg-[#3B82F6]/20 items-center mr-4">
+                                        <p class="text-4xl font-playfair text-[#3b82f6] tracking-tight">1</p>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <h1 class="text-base sm:text-md md:text-lg lg:text-xl font-lato tracking-tight">Модуль 1: Введение в Data Science</h1>
+
+                                        <ul class="pl-4">
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Основы программирования на Python
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Работа с Jupyter Notebook
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Библиотеки NumPy и Pandas
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Визуализация данных с Matplotlib и Seaborn
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="flex flex-row px-4 py-2 md:px-6 md:py-4 shadow rounded-card border mb-4 md:mb-6">
+
+                                    <div class="flex flex-col w-12 h-12 rounded-full bg-[#3B82F6]/20 items-center mr-4">
+                                        <p class="text-4xl font-playfair text-[#3b82f6] tracking-tight">2</p>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <h1 class="text-base sm:text-md md:text-lg lg:text-xl font-lato tracking-tight">Модуль 2: Математика для Data Science</h1>
+
+                                        <ul class="pl-4">
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Линейная алгебра
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Математический анализ
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Теория вероятностей
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Статистика и статистические тесты
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="flex flex-row px-4 py-2 md:px-6 md:py-4 shadow rounded-card border mb-4 md:mb-6">
+
+                                    <div class="flex flex-col w-12 h-12 rounded-full bg-[#3B82F6]/20 items-center mr-4">
+                                        <p class="text-4xl font-playfair text-[#3b82f6] tracking-tight">3</p>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <h1 class="text-base sm:text-md md:text-lg lg:text-xl font-lato tracking-tight">Модуль 3: Машинное обучение</h1>
+
+                                        <ul class="pl-4">
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Supervised Learning: регрессия и классификация
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Unsupervised Learning: кластеризация
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Работа с библиотекой Scikit-learn
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Оценка качества моделей
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="flex flex-row px-4 py-2 md:px-6 md:py-4 shadow rounded-card border mb-4 md:mb-6">
+
+                                    <div class="flex flex-col w-12 h-12 rounded-full bg-[#3B82F6]/20 items-center mr-4">
+                                        <p class="text-4xl font-playfair text-[#3b82f6] tracking-tight">4</p>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <h1 class="text-base sm:text-md md:text-lg lg:text-xl font-lato tracking-tight">Модуль 4: Глубокое обучение</h1>
+
+                                        <ul class="pl-4">
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Нейронные сети и их архитектуры
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Работа с TensorFlow и Keras
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Компьютерное зрение
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Обработка естественного языка (NLP)
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="flex flex-row px-4 py-2 md:px-6 md:py-4 shadow rounded-card border mb-4 md:mb-6">
+
+                                    <div class="flex flex-col w-12 h-12 rounded-full bg-[#3B82F6]/20 items-center mr-4">
+                                        <p class="text-4xl font-playfair text-[#3b82f6] tracking-tight">5</p>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <h1 class="text-base sm:text-md md:text-lg lg:text-xl font-lato tracking-tight">Модуль 5: Практические проекты</h1>
+
+                                        <ul class="pl-4">
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Анализ реальных датасетов
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Построение предсказательных моделей
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Деплой ML-моделей
+                                            </li>
+                                            <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                                <img class="pr-2" src="images/check.svg" alt="">
+                                                Итоговый проект
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    
+                                </div>
+                        
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-col px-4 py-2 md:px-6 md:py-4 shadow-lg rounded-card border gap-4">
+
+                            <div class="flex flex-col gap-2">
+                                <h1 class="text-xl md:text-2xl font-medium font-playfair mb-3">Что вы получите</h1>
+
+                                <ul class="pl-4">
+                                    <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                        <img class="pr-2" src="images/check.svg" alt="">
+                                        Доступ к платформе на время обучения и 1 год после
+                                    </li>
+                                    <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                        <img class="pr-2" src="images/check.svg" alt="">
+                                        Библиотека материалов и датасетов
+                                    </li>
+                                    <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                        <img class="pr-2" src="images/check.svg" alt="">
+                                        Личный куратор и поддержка
+                                    </li>
+                                    <li class="flex flex-row text-sm sm:text-base md:text-md lg:text-lg font-lato text-[#8d8f97] tracking-tight">
+                                        <img class="pr-2" src="images/check.svg" alt="">
+                                        Помощь в трудоустройстве
+                                    </li>
+                                </ul>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-4 basis-1/3">
+
+                        <div class="h-fit px-6 py-4 rounded-card overflow-hidden shadow-xl border">
+
+                            <img class="w-full relative rounded-card" src="images/catalog1.jpg" alt="">
+
+                            <div class="flex flex-col gap-4 p-2 md:p-4">
+                                <div class="flex flex-col">
+                                    <h2 class="text-2xl md:text-3xl font-medium font-playfair">65 000₽</h2>
+                                    <p class="text-lg md:text-xl font-medium font-playfair">или 5 417 ₽ / мес</p>
+                                </div>
+
+                                <button class="w-full text-xl py-4 text-center rounded-btn bg-[#3b82f6] text-white font-medium font-latto hover:bg-[#1974d2] transition-all cursor-pointer">Записаться</button>
+                                <button class="w-full text-xl py-4 text-center rounded-btn bg-[#f0f4ff] font-medium font-latto hover:bg-[#dbdbdb] transition-all cursor-pointer">Задать вопрос</button>
+
+                                <img class="h-1" src="images/line.png" alt="">
+
+                                <ul class="flex flex-col gap-4">
+                                        <li class="flex flex-row">
+                                            <img class="pr-2" src="images/medal.svg" alt="">
+
+                                            <div class="flex flex-col">
+                                                <h3 class="text-md md:text-lg font-lato tracking-tight">Документ</h3>
+                                                <p class="text-base md:text-md font-lato text-[#8d8f97] tracking-tight">Диплом о профессиональной переподготовке государственного образца</p>
+                                            </div>
+
+                                        </li>
+
+                                        <li class="flex flex-row">
+                                            <img class="pr-2" src="images/book.svg" alt="">
+
+                                            <div class="flex flex-col">
+                                                <h3 class="text-md md:text-lg font-lato tracking-tight">Формат</h3>
+                                                <p class="text-base md:text-md font-lato text-[#8d8f97] tracking-tight">Полностью дистанционно</p>
+                                            </div>
+
+                                        </li>
+
+                                        <li class="flex flex-row">
+                                            <img class="pr-2" src="images/peoples.svg" alt="">
+
+                                            <div class="flex flex-col">
+                                                <h3 class="text-md md:text-lg font-lato tracking-tight">Студентов</h3>
+                                                <p class="text-base md:text-md font-lato text-[#8d8f97] tracking-tight">1240</p>
+                                            </div>
+
+                                        </li>
+                                    </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-4 bg-[#3B82F6]/15 rounded-card p-4 md:p-6">
+                            <h3 class="text-xl md:text-2xl font-playfair font-semibold">Нужна помощь с выбором?</h3>
+                            <p class="text-lg md:text-xl text-[#8d8f97]">Наши специалисты помогут подобрать подходящую программу</p>
+
+                            <div class="flex flex-row gap-2">
+                                <p class="text-lg md:text-xl font-lato text-[#3b82f6] tracking-tight mb-2">Подобрать программу</p>
+                                <img class="h-8" src="images/right.png" alt="">
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-[#1a1f2e] text-white w-full py-12 md:py-16">
+            <div class="container mx-auto px-5 md:px-8 lg:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div>
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 bg-[url('images/logo2.png')] bg-cover rounded-full"></div>
+                            <p class="text-xl font-medium text-[#f7faff]">Академия Знаний</p>
+                        </div>
+                        <p class="text-[#f0f4ff]/80 text-base">Современная образовательная платформа с государственной аккредитацией. Получайте качественное образование 24/7 в удобном формате.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-playfair font-semibold mb-5 text-[#f7faff]">Навигация</h4>
+                        <ul class="space-y-3 text-[#f0f4ff]/70">
+                            <li class="hover:text-white cursor-pointer transition">Каталог курсов</li>
+                            <li class="hover:text-white cursor-pointer transition">База знаний</li>
+                            <li class="hover:text-white cursor-pointer transition">Подбор программы</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-playfair font-semibold mb-5 text-[#f7faff]">Контакты</h4>
+                        <div class="space-y-3 text-[#f0f4ff]/70">
+                            <div class="flex items-center gap-2">
+                                <img class="w-4 h-4" src="images/phone.png" alt="">
+                                +7 (946) 123-45-67</div>
+                            <div class="flex items-center gap-2">
+                                <img class="w-4 h-4" src="images/mail.png" alt="">
+                                AcademyofKnowledge@mail.ru</div>
+                            <div class="flex items-start gap-2">
+                                <img class="w-4 h-4" src="images/geo.png" alt="">
+                                г. Самара, Московское шоссе, 125А</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-white/20 mt-12 pt-8 text-center text-[#f0f4ff]/60 text-sm">© 2026 Академия Знаний. Все права защищены.</div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        const search = document.querySelectorAll('.search');
+        
+        search.forEach(item => {
+            
+            item.addEventListener('click', (e) => {
+
+                const isCurrentlyClick = search && !search.classList.contains('hidden');
+                
+                document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.add('hidden'));
+                document.querySelectorAll('.plus-icon').forEach(icon => icon.classList.remove('rotate-45'));
+                
+                if (!isCurrentlyClick && answer) {
+                    answer.classList.remove('hidden');
+                    if (iconSvg) iconSvg.classList.add('rotate-45');
+                }
+            });
+        });
+
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(menuBtn && mobileMenu) {
+            
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
