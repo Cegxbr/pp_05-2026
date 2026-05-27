@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Академия Знаний — современное онлайн-образование</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'lato': ['Lato', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'card': '1rem',
+                        'btn': '1rem',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .transition-custom {
+            transition: all 0.25s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+        }
+        .slider-bg {
+            transition: background-image 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .plus-icon {
+            transition: transform 0.3s ease;
+        }
+        .rotate-90 {
+            transform: rotate(90deg);
+        }
+        @media (max-width: 768px) {
+            .faq-text {
+                font-size: 1.5rem !important;
+                line-height: 1.3 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-lato text-[#1a1f2e] antialiased overflow-x-hidden">
+
+    <main class="relative w-full">
+
+        <header class="relative w-full bg-white overflow-hidden">
+
+            <div class="bg-[#f7faff]/95 backdrop-blur-sm top-0 left-0 w-full z-50 shadow-sm">
+                <div class="container mx-auto px-5 md:px-8 lg:px-12 py-4 flex flex-wrap items-center justify-between gap-4">
+
+                    <div class="flex items-center gap-3 shrink-0">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-[url('images/logo1.png')] bg-cover bg-center rounded-full"></div>
+                        <a href="Index.html" class="text-lg md:text-xl font-medium text-[#3b82f6] font-lato">Академия Знаний</a>
+                    </div>
+
+                    <div class="hidden md:flex items-center gap-6 lg:gap-10">
+                        <div class="flex gap-6 lg:gap-10 text-base lg:text-lg font-medium">
+                            <a href="catalog.html" class="hover:text-[#3b82f6] transition-custom cursor-pointer">Курсы</a>
+                            <a href="base.html" class="hover:text-[#3b82f6] transition-custom cursor-pointer">База знаний</a>
+                            <a href="#" class="hover:text-[#3b82f6] transition-custom cursor-pointer">Подбор курса</a>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="cursor-pointer px-4 py-2 rounded-btn bg-[#f7faff] text-[#3b82f6] font-medium hover:bg-[#f0f4ff] transition-custom">Войти</div>
+                            <div class="cursor-pointer px-5 py-2 rounded-btn bg-[#3b82f6] text-white font-medium hover:bg-blue-400 hover:text-black hover:scale-105 transition-custom shadow-md">Начать обучение</div>
+                        </div>
+                    </div>
+
+                    <div class="md:hidden flex items-center gap-3">
+                        <div class="cursor-pointer px-3 py-1.5 rounded-btn bg-[#3b82f6] text-white text-sm" onclick="alert('Форма входа')">Войти</div>
+                        <button id="mobileMenuBtn" class="text-[#1a1f2e] focus:outline-none">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="mobileMenu" class="hidden md:hidden bg-[#f7faff] border-t border-[#f0f4ff] flex flex-col gap-4 px-5 py-6">
+                    <a href="catalog.html" class="text-lg font-medium hover:text-[#3b82f6]">Курсы</a>
+                    <a href="base.html" class="text-lg font-medium hover:text-[#3b82f6]">База знаний</a>
+                    <a href="#" class="text-lg font-medium hover:text-[#3b82f6]">Подбор курса</a>
+                    <div class="pt-2 flex flex-col gap-3">
+                        <div class="text-center py-2 rounded-btn bg-white text-[#3b82f6] font-medium">Войти</div>
+                        <div class="text-center py-2 rounded-btn bg-[#3b82f6] text-white font-medium">Начать обучение</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 md:pt-8 lg:pt-12 w-full">
+                <div class="container mx-auto px-5 md:px-8 lg:px-12 py-2 md:py-4 flex flex-col items-center gap-4 md:gap-6">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair text-[#3b82f6] tracking-tight text-center">Подбор программы обучения</h1>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="bg-[#f7faff] w-full py-8 md:py-16">
+            <div class="container mx-auto px-5 md:px-8 lg:px-12">
+                <div class="flex flex-col mb-12 gap-2">
+                    <h3 class="text-2xl md:text-3xl font-medium font-playfair">Подходящие курсы для вас</h3>
+                    <p class="text-lg md:text-xl font-medium font-playfair">Мы подобрали <a class="underline decoration-green-400 decoration-2">3 программы</a>, соответствующие вашим критериям</p>
+                </div>
+                
+                <div class="flex flex-col md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+
+                    <div class="border-2 border-[#8d8f97]/20 rounded-card overflow-hidden bg-[#f0f4ff] transition-all hover:shadow-2xl hover:scale-[1.01] group">
+                        <div class="flex flex-col gap-4 p-2 md:p-4">
+                            <div class="w-full flex flex-row justify-between items-center">
+                                <h3 class="text-lg md:text-2xl font-medium font-playfair mb-3">Data Science: от основ до машинного обучения</h3>
+                                <p class="w-fit text-xs md:text-sm text-[#3b82f6] mb-2 px-3 py-2 rounded-card bg-[#3b82f6]/20">95% совпадение</p>
+                            </div>
+
+                            <p class="text-[#8d8f97] text-sm md:text-md mb-2 font-lato">Полностью дистанционно</p>
+
+                            <div class="flex flex-row gap-4 md:gap-80">
+                                <div class="flex flex-col items-center font-lato mb-2">
+                                    <p class="text-[#8d8f97] text-sm md:text-md">Стоимость</p>
+                                    <p class="text-md md:text-lg">65 000 ₽</p>
+                                    
+                                </div>
+                                <div class="flex flex-col items-center font-lato mb-2">
+                                    <p class="text-[#8d8f97] text-sm md:text-md">Длительность</p>
+                                    <p class="text-md md:text-lg">8 месяцев</p>
+                                    
+                                </div>
+                                <div class="flex flex-col items-center font-lato mb-2">
+                                    <p class="text-[#8d8f97] text-sm md:text-md">Длительность</p>
+                                    <p class="text-md md:text-lg">5 417 ₽/мес</p>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row gap-2">
+                                <button class="basis-3/4 w-full text-md md:text-xl py-4 text-center rounded-btn bg-[#3b82f6] text-white font-medium font-playfair hover:bg-[#1974d2] transition-all cursor-pointer">Подробнее о курсе</button>
+                                <button class="basis-1/4 w-full text-md md:text-xl py-4 text-center rounded-btn bg-green-400 text-white font-medium font-playfair hover:bg-green-600 transition-all cursor-pointer">Записаться</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="border-2 border-[#8d8f97]/20 rounded-card overflow-hidden bg-[#f0f4ff] transition-all hover:shadow-2xl hover:scale-[1.01] group">
+                        <div class="flex flex-col gap-4 p-2 md:p-4">
+                            <div class="w-full flex flex-row justify-between items-center">
+                                <h3 class="text-lg md:text-2xl font-medium font-playfair mb-3">Frontend-разработка: React и современный JavaScript</h3>
+                                <p class="w-fit text-xs md:text-sm text-[#3b82f6] mb-2 px-3 py-2 rounded-card bg-[#3b82f6]/20">90% совпадение</p>
+                            </div>
+
+                            <p class="text-[#8d8f97] text-sm md:text-md mb-2 font-lato">Полностью дистанционно</p>
+
+                            <div class="flex flex-row gap-4 md:gap-80">
+                                <div class="flex flex-col items-center font-lato mb-2">
+                                    <p class="text-[#8d8f97] text-sm md:text-md">Стоимость</p>
+                                    <p class="text-lg">58 000 ₽</p>
+                                    
+                                </div>
+                                <div class="flex flex-col items-center font-lato mb-2">
+                                    <p class="text-[#8d8f97] text-sm md:text-md">Длительность</p>
+                                    <p class="text-md md:text-lg">6 месяцев</p>
+                                    
+                                </div>
+                                <div class="flex flex-col items-center font-lato mb-2">
+                                    <p class="text-[#8d8f97] text-sm md:text-md">Длительность</p>
+                                    <p class="text-md md:text-lg">4 833 ₽/мес</p>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row gap-2">
+                                <button class="basis-3/4 w-full text-md md:text-xl py-4 text-center rounded-btn bg-[#3b82f6] text-white font-medium font-playfair hover:bg-[#1974d2] transition-all cursor-pointer">Подробнее о курсе</button>
+                                <button class="basis-1/4 w-full text-md md:text-xl py-4 text-center rounded-btn bg-green-400 text-white font-medium font-playfair hover:bg-green-600 transition-all cursor-pointer">Записаться</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="border-2 border-[#8d8f97]/20 rounded-card overflow-hidden bg-[#f0f4ff] transition-all hover:shadow-2xl hover:scale-[1.01] group">
+                        <div class="flex flex-col gap-4 p-2 md:p-4">
+                            <div class="w-full flex flex-row justify-between items-center">
+                                <h3 class="text-lg md:text-2xl font-medium font-playfair mb-3">Python для начинающих</h3>
+                                <p class="w-fit text-xs md:text-sm text-[#3b82f6] mb-2 px-3 py-2 rounded-card bg-[#3b82f6]/20">85% совпадение</p>
+                            </div>
+
+                            <p class="text-[#8d8f97] text-sm md:text-md mb-2 font-lato">Полностью дистанционно</p>
+
+                            <div class="flex flex-row gap-4 md:gap-80">
+                                <div class="flex flex-col items-center font-lato mb-2">
+                                    <p class="text-[#8d8f97] text-sm md:text-md">Стоимость</p>
+                                    <p class="text-md md:text-lg">28 000 ₽</p>
+                                    
+                                </div>
+                                <div class="flex flex-col items-center font-lato mb-2">
+                                    <p class="text-[#8d8f97] text-sm md:text-md">Длительность</p>
+                                    <p class="text-md md:text-lg">3 месяца</p>
+                                    
+                                </div>
+                                <div class="flex flex-col items-center font-lato mb-2">
+                                    <p class="text-[#8d8f97] text-sm md:text-md">Длительность</p>
+                                    <p class="text-md md:text-lg">2 333 ₽/мес</p>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row gap-2">
+                                <button class="basis-3/4 w-full text-md md:text-xl py-4 text-center rounded-btn bg-[#3b82f6] text-white font-medium font-playfair hover:bg-[#1974d2] transition-all cursor-pointer">Подробнее о курсе</button>
+                                <button class="basis-1/4 w-full text-md md:text-xl py-4 text-center rounded-btn bg-green-400 text-white font-medium font-playfair hover:bg-green-600 transition-all cursor-pointer">Записаться</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="flex flex-col gap-4 bg-[#3B82F6]/15 rounded-card py-6 md:py-10 items-center mb-8 md:mb-16">
+                    <h3 class="text-2xl md:text-3xl font-playfair text-center">Нужна консультация?</h3>
+                    <p class="text-lg md:text-xl font-lato mb-6 md:mb-8 text-center">Наши специалисты помогут сделать окончательный выбор и ответят на все вопросы</p>
+
+                    <div class="flex flex-row gap-2">
+                        <button class="text-md md:text-xl py-4 px-2 md:py-6 md:px-4 text-center rounded-btn bg-[#3b82f6] text-white font-medium font-playfair hover:bg-[#1974d2] transition-all cursor-pointer">Записаться на консультацию</button>
+                        <button class="text-md md:text-xl py-4 px-2 md:py-6 md:px-4 text-center border-2 border-[#3b82f6] rounded-btn bg-white text-[#3b82f6] font-medium font-playfair hover:bg-[#3b82f6]/10 transition-all cursor-pointer">Перейти к каталогу</button>
+                    </div>
+                    
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <button class="text-base md:text-md py-2 px-8 text-center rounded-btn bg-[#8d8f97]/10 font-medium font-lato hover:bg-[#8d8f97]/30 transition-all cursor-pointer">Начать заново</button>
+                </div>
+                
+            </div>
+        </section>
+
+        <footer class="bg-[#1a1f2e] text-white w-full py-12 md:py-16">
+            <div class="container mx-auto px-5 md:px-8 lg:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div>
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 bg-[url('images/logo2.png')] bg-cover rounded-full"></div>
+                            <p class="text-xl font-medium text-[#f7faff]">Академия Знаний</p>
+                        </div>
+                        <p class="text-[#f0f4ff]/80 text-base">Современная образовательная платформа с государственной аккредитацией. Получайте качественное образование 24/7 в удобном формате.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-playfair font-semibold mb-5 text-[#f7faff]">Навигация</h4>
+                        <ul class="space-y-3 text-[#f0f4ff]/70">
+                            <li class="hover:text-white cursor-pointer transition">Каталог курсов</li>
+                            <li class="hover:text-white cursor-pointer transition">База знаний</li>
+                            <li class="hover:text-white cursor-pointer transition">Подбор программы</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-playfair font-semibold mb-5 text-[#f7faff]">Контакты</h4>
+                        <div class="space-y-3 text-[#f0f4ff]/70">
+                            <div class="flex items-center gap-2">
+                                <img class="w-4 h-4" src="images/phone.png" alt="">
+                                +7 (946) 123-45-67</div>
+                            <div class="flex items-center gap-2">
+                                <img class="w-4 h-4" src="images/mail.png" alt="">
+                                AcademyofKnowledge@mail.ru</div>
+                            <div class="flex items-start gap-2">
+                                <img class="w-4 h-4" src="images/geo.png" alt="">
+                                г. Самара, Московское шоссе, 125А</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-white/20 mt-12 pt-8 text-center text-[#f0f4ff]/60 text-sm">© 2026 Академия Знаний. Все права защищены.</div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        const search = document.querySelectorAll('.search');
+        
+        search.forEach(item => {
+            
+            item.addEventListener('click', (e) => {
+
+                const isCurrentlyClick = search && !search.classList.contains('hidden');
+                
+                document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.add('hidden'));
+                document.querySelectorAll('.plus-icon').forEach(icon => icon.classList.remove('rotate-45'));
+                
+                if (!isCurrentlyClick && answer) {
+                    answer.classList.remove('hidden');
+                    if (iconSvg) iconSvg.classList.add('rotate-45');
+                }
+            });
+        });
+
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(menuBtn && mobileMenu) {
+            
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
